@@ -5,40 +5,61 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  /* shadcn surface + system tokens */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-sans);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
-  --color-ring: var(--ring);
-  --color-input: var(--input);
-  --color-border: var(--border);
-  --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
-  --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Garden Coach status tokens */
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+
+  /* Plant type tokens — auto-generated utilities:
+     bg-leafy-green, text-leafy-green, border-leafy-green, etc. */
+  --color-leafy-green: var(--type-leafy-green);
+  --color-fruiting: var(--type-fruiting);
+  --color-root: var(--type-root);
+  --color-herb: var(--type-herb);
+  --color-legume: var(--type-legume);
+  --color-allium: var(--type-allium);
+  --color-brassica: var(--type-brassica);
+  --color-vine: var(--type-vine);
+
+  /* Fonts — layout.tsx exposes --font-geist-sans and --font-geist-mono */
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", monospace;
+  --font-heading: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+
+  /* Radii — generous rounding throughout */
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -49,72 +70,76 @@
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
-}
+  /* Garden Coach surface palette */
+  --background: #fafaf7;
+  --foreground: #1f2937;
+  --card: #ffffff;
+  --card-foreground: #1f2937;
+  --popover: #ffffff;
+  --popover-foreground: #1f2937;
 
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  /* Primary action = leafy green (brand) */
+  --primary: #4ea83d;
+  --primary-foreground: #ffffff;
+
+  --secondary: #f1f3ee;
+  --secondary-foreground: #1f2937;
+  --muted: #f5f5f1;
+  /* WCAG: #6b7280 on the warm off-white background lands at ~4.47:1,
+     just under AA. #4b5563 lifts contrast to ~6.8:1 on both the
+     background and on subtly tinted card surfaces. */
+  --muted-foreground: #4b5563;
+  --accent: #f1f3ee;
+  --accent-foreground: #1f2937;
+  --destructive: #ef4444;
+  --border: #e5e7eb;
+  --input: #e5e7eb;
+  --ring: #6bbf59;
+
+  /* Status colors */
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+
+  /* Plant type colors */
+  --type-leafy-green: #6bbf59;
+  --type-fruiting: #e85d75;
+  --type-root: #c77b3f;
+  --type-herb: #7cc4a0;
+  --type-legume: #8fa958;
+  --type-allium: #b295c4;
+  --type-brassica: #4a90a4;
+  --type-vine: #d4a155;
+
+  /* Charts — keep shadcn placeholders for now */
+  --chart-1: #6bbf59;
+  --chart-2: #e85d75;
+  --chart-3: #c77b3f;
+  --chart-4: #4a90a4;
+  --chart-5: #b295c4;
+
+  /* Radius base */
+  --radius: 0.875rem;
+
+  /* Layered shadow recipe used for cards */
+  --shadow-card:
+    0 1px 2px rgb(16 24 40 / 0.04),
+    0 4px 12px -2px rgb(16 24 40 / 0.06),
+    0 12px 24px -8px rgb(16 24 40 / 0.05);
+  --shadow-card-hover:
+    0 1px 2px rgb(16 24 40 / 0.05),
+    0 6px 16px -2px rgb(16 24 40 / 0.08),
+    0 16px 32px -10px rgb(16 24 40 / 0.07);
+
+  /* Sidebar — unused for now but keep tokens valid */
+  --sidebar: #ffffff;
+  --sidebar-foreground: #1f2937;
+  --sidebar-primary: #4ea83d;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f1f3ee;
+  --sidebar-accent-foreground: #1f2937;
+  --sidebar-border: #e5e7eb;
+  --sidebar-ring: #6bbf59;
 }
 
 @layer base {
@@ -122,9 +147,87 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1;
   }
   html {
     @apply font-sans;
+  }
+  /* Visible, high-contrast focus ring for keyboard users on any element. */
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  .card-surface,
+  .card-surface-interactive {
+    background: var(--card);
+    box-shadow: var(--shadow-card);
+    transition:
+      transform 200ms ease-out,
+      box-shadow 200ms ease-out;
+  }
+  .card-surface-interactive:hover,
+  .card-surface-interactive:focus-within {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  /* Pokémon-style stat bar track + fill */
+  .stat-track {
+    background:
+      linear-gradient(180deg, rgb(0 0 0 / 0.04) 0%, rgb(0 0 0 / 0.02) 100%);
+    box-shadow: inset 0 1px 2px rgb(16 24 40 / 0.08);
+  }
+  .stat-fill {
+    background-image: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--stat-color, var(--primary)) 90%, white) 0%,
+      var(--stat-color, var(--primary)) 100%
+    );
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.35);
+    transition: width 380ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+}
+
+@keyframes garden-fade-in-soft {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-soft {
+  animation: garden-fade-in-soft 320ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-surface,
+  .card-surface-interactive {
+    transition: none;
+  }
+  .card-surface-interactive:hover,
+  .card-surface-interactive:focus-within {
+    transform: none;
+  }
+  .stat-fill {
+    transition: none;
+  }
+  .fade-in-soft {
+    animation: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
   }
 }
